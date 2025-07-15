@@ -1,0 +1,194 @@
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f9f9f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* NAVBAR */
+header {
+  background: #1f1f1f;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00bcd4;
+}
+
+.btn {
+  background: #00bcd4;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background: #0198aa;
+  transform: translateY(-3px);
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80')
+              center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.hero-text h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* FEATURES */
+.features, .pricing, .how, .contact {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.features h2, .how h2, .pricing h2, .testimonials h2, .contact h2 {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 2rem;
+}
+
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.feature-box {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-8px);
+}
+
+.feature-box img {
+  width: 50px;
+  margin-bottom: 1rem;
+}
+
+/* HOW IT WORKS */
+.how-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.how-step {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* PLANS */
+.price-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.price-card .price {
+  color: #00bcd4;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.price-card ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.price-card li {
+  padding: 0.5rem 0;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  background: #1f1f1f;
+  color: #fff;
+  padding: 4rem 0;
+}
+
+.testimonial-card {
+  max-width: 600px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+.testimonial-card h4 {
+  margin-top: 1rem;
+  font-weight: normal;
+}
+
+/* FOOTER */
+footer {
+  background: #1f1f1f;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
