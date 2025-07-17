@@ -133,6 +133,35 @@ header {
 }
 
 .split-feature {
+  /* Reuse split-feature layout */
+.split-feature.reverse {
+  flex-direction: row-reverse;
+}
+
+.points {
+  margin-top: 1rem;
+}
+
+.point {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  font-weight: 500;
+}
+
+.feature-text h2 {
+  margin-bottom: 1rem;
+}
+
+.feature-text p {
+  margin-bottom: 1rem;
+}
+
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
