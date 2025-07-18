@@ -207,3 +207,43 @@ footer {
   text-align: center;
   padding: 1rem 0;
 }
+
+/* Trust Section */
+.trust {
+  background: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.trust h2 {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 3rem;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
+}
+
+.trust-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.trust-card:hover {
+  transform: translateY(-5px);
+}
+
+.trust-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.trust-card h3 {
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 0.5rem;
+}
