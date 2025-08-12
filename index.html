@@ -1,124 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dax Dialer - An Auto Dialer Platform</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DaxDialer - Smart Auto Dialer</title>
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Raleway:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
 
-  <!-- AOS Animations -->
+  <!-- Styles & AOS -->
+  <link rel="stylesheet" href="style.css" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
-
 <body>
-  <!-- Header -->
-  <header>
-    <div class="navbar container">
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container nav-wrap">
       <div class="logo">DaxDialer</div>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#features">Solutions</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="aboutus">About Us</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#howitworks">How It Works</a></li>
-      </ul>
-      <a href="#" class="btn nav-btn">Try Free</a>
+
+      <nav class="nav" id="mainNav">
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#solution">Solutions</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#how">How It Works</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="btn nav-btn">Try Free</a>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-text" data-aos="fade-up">
+    <div class="container hero-inner" data-aos="fade-up">
       <h1>Smart Auto Dialer & WhatsApp Engagement</h1>
       <p>Boost your outreach with DaxDialer’s all-in-one communication platform.</p>
-      <a href="#" class="btn">Get Started</a>
+      <a class="btn" href="#">Get Started</a>
     </div>
   </section>
 
-  <!-- Services Navigator -->
-  
-    <!-- Call CRM Section -->
-<section id="call-crm" class="call-crm">
-  <div class="container split-feature">
-    <div class="feature-text" data-aos="fade-right">
-      <h2>Call CRM</h2>
-      <p>Centralize your telecalling operations with DaxDialer’s built-in Call CRM. Monitor agents, manage customer data, and view daily call summaries — all in one place.</p>
-      <div class="points">
-        <div class="point">
-          📊 <span>Team Dashboard</span>
-        </div>
-        <div class="point">
-          👥 <span>Employee Tracking</span>
-        </div>
-        <div class="point">
-          📁 <span>Call History & Sync</span>
-        </div>
-        <div class="point">
-          📋👥 <span>Detailed Team Reports</span>
-        </div>
-        <div class="point">
-          🔍👤 <span>Leads Reporting</span>
+ 
+  <!-- Call CRM (new, unique) -->
+  <section id="call-crm" class="call-crm">
+    <div class="container split-feature">
+      <div class="feature-text" data-aos="fade-right">
+        <h2>Call CRM</h2>
+        <p>Centralize telecalling operations: monitor agents, manage customers, and view daily summaries in one dashboard.</p>
+        <div class="points">
+          <div class="point">👥📊 <span>Team Dashboard</span></div>
+          <div class="point">👥 <span>Employee Tracking</span></div>
+          <div class="point">📞🕑 <span>Call History & Sync</span></div>
+          <div class="point">👥📑 <span>Detailed Team Reports</span></div>
+          <div class="point">📈🎯 <span>Leads Reporting</span></div>
         </div>
       </div>
+      <div class="feature-image" data-aos="fade-left">
+        <img src="crm.jpg" alt="Call CRM Insights">
+      </div>
     </div>
-    <div class="feature-image" data-aos="fade-left">
-      <img src="crm.jpg" alt="Call CRM Insights">
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Call Monitoring Section -->
-<section id="call-monitoring" class="call-monitoring">
-  <div class="container split-feature reverse">
-    <div class="feature-image" data-aos="fade-right">
-      <img src="dd6.jpg" alt="Call Monitoring">
-    </div>
-    <div class="feature-text" data-aos="fade-left">
-      <h2>Real-time Call Monitoring</h2>
-      <p>Stay updated on incoming, outgoing, missed, or rejected calls. Visual dashboards make it easy to check performance, live statuses, and overall call health.</p>
-      <div class="points">
-        <div class="point">
-          ✅ <span>Live Call Stats</span>
-        </div>
-        <div class="point">
-          🔔 <span>Instant Missed Call Alerts</span>
-        </div>
-        <div class="point">
-          📈 <span>Performance Reports</span>
-        </div>
-         <div class="point">
-         📞⚙️<span>Custom Call Report</span>
-        </div>
-         <div class="point">
-         📞🔓<span>Call Recording Access</span>
+  <!-- Call Monitoring (new, unique) -->
+  <section id="call-monitoring" class="call-monitoring">
+    <div class="container split-feature reverse">
+      <div class="feature-image" data-aos="fade-right">
+        <img src="dd6.jpg" alt="Call Monitoring">
+      </div>
+      <div class="feature-text" data-aos="fade-left">
+        <h2>Real-time Call Monitoring</h2>
+        <p>Track incoming, outgoing, missed and rejected calls with live stats, alerts and performance charts.</p>
+        <div class="points">
+          <div class="point">📞 <span>Live Call Status</span></div>
+          <div class="point">🔔 <span>Instant Missed Call Alerts</span></div>
+          <div class="point">🎙️ <span>Call Recording Access</span></div>
+          <div class="point">📋 <span>Custom Reports</span></div>
+          <div class="point">📈 <span>Performance Report</span></div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<section id="services" class="services"></section>
+  </section>
+
+  <!-- Services Navigator / WhatsApp API block -->
+  <section id="services" class="services">
     <div class="container service-container">
-      <div class="service-menu">
+      <div class="service-menu" data-aos="fade-right">
         <ul>
-          <li><span>📲</span> WhatsApp API</li>
-          <li><span>📞</span> Virtual Number</li>
+          <li class="active"><span>📲</span> WhatsApp API</li>
+          <li><span>📞</span> Virtual number</li>
           <li><span>🔗</span> Integrations</li>
           <li><span>📊</span> Real-time Analytics</li>
         </ul>
       </div>
-      <div class="service-content">
-        <h2 data-aos="fade-left">WhatsApp Business API</h2>
-        <p data-aos="fade-left">Send automated messages, notifications & customer support at scale using WhatsApp.</p>
-        <img src="autodialer.jpg" alt="WhatsApp Dashboard" data-aos="fade-left">
+      <div class="service-content" data-aos="fade-left">
+        <h2>WhatsApp Business API</h2>
+        <img src="autodialer.jpg" alt="WhatsApp Dashboard">
       </div>
     </div>
   </section>
 
-  <!-- Split Feature Section -->
+  <!-- Split feature (marketing / campaigns) -->
   <section id="features" class="features">
     <div class="container split-feature">
       <div class="feature-image" data-aos="fade-right">
@@ -126,65 +114,81 @@
       </div>
       <div class="feature-text" data-aos="fade-left">
         <h2>Marketing & Campaigns</h2>
-        <p>Run WhatsApp campaigns, click-to-WhatsApp ads, and connect offline customers using QR codes.</p>
+        <p>Run WhatsApp campaigns, Click-to-WhatsApp ads, and connect offline customers with QR codes.</p>
         <div class="feature-cards">
           <div class="feature-card">
             <h3>WhatsApp Campaign</h3>
-            <p>Build a database and run drip campaigns to engage customers consistently.</p>
+            <p>Build lists and run targeted drip campaigns.</p>
           </div>
           <div class="feature-card">
-            <h3>Click-to-WhatsApp Ads</h3>
-            <p>Drive traffic directly to WhatsApp for better conversion rates.</p>
+            <h3>Click-to-WhatsApp</h3>
+            <p>Drive traffic directly into conversations.</p>
           </div>
           <div class="feature-card">
-            <h3>WhatsApp QR Code</h3>
-            <p>Connect offline audiences via QR code and convert them to online leads.</p>
+            <h3>QR Code Connect</h3>
+            <p>Convert offline customers using QR flows.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Trust DaxDialer Section -->
-<section id="trust" class="trust">
-  <div class="container">
-    <h2 data-aos="fade-up">Why Businesses Trust DaxDialer</h2>
-    <div class="trust-grid">
-      <div class="trust-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="trust-icon">🚀</div>
-        <h3>Boosts Productivity</h3>
-        <p>Identify ways to improve caller productivity with live call analytics and smart dashboards.</p>
-      </div>
-      <div class="trust-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="trust-icon">⏱️</div>
-        <h3>Reduces Downtime</h3>
-        <p>Spot gaps in agent workflows and reduce idle time with clear call summaries and missed call alerts.</p>
-      </div>
-      <div class="trust-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="trust-icon">📊</div>
-        <h3>Transparent Performance</h3>
-        <p>Measure agent performance with real-time reports and transparent analytics for every call made.</p>
-      </div>
-      <div class="trust-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="trust-icon">🤖</div>
-        <h3>Smart Automation</h3>
-        <p>Automate repetitive tasks like logging calls, updating contacts, and syncing with your CRM.</p>
+ 
+
+   <!-- Trust Section -->
+  <section id="trust" class="trust">
+    <div class="container">
+      <h2 data-aos="fade-up">Why Businesses Trust DaxDialer</h2>
+      <div class="trust-grid">
+        <div class="trust-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="trust-icon">🚀</div>
+          <h3>Boosts Productivity</h3>
+          <p>Identify ways to improve caller productivity with live analytics and dashboards.</p>
+        </div>
+        <div class="trust-card" data-aos="fade-up" data-aos-delay="160">
+          <div class="trust-icon">⏱️</div>
+          <h3>Reduces Downtime</h3>
+          <p>Spot workflow gaps and reduce idle time with clear call summaries.</p>
+        </div>
+        <div class="trust-card" data-aos="fade-up" data-aos-delay="240">
+          <div class="trust-icon">📊</div>
+          <h3>Transparent Performance</h3>
+          <p>Measure agent performance with real-time reports for every campaign.</p>
+        </div>
+        <div class="trust-card" data-aos="fade-up" data-aos-delay="320">
+          <div class="trust-icon">🤖</div>
+          <h3>Smart Automation</h3>
+          <p>Automate repetitive tasks: logging, updates, and CRM syncs to save time.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2 data-aos="fade-up">What Our Clients Say</h2>
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
+        <p>“DaxDialer improved our connect rate by 60% — our sales team is closing more deals than ever!”</p>
+        <h4>- Rahul Verma, Sales Head</h4>
+      </div>
+    </div>
+  </section>
 
   <!-- Contact -->
   <section id="contact" class="contact">
     <div class="container">
-      <h2 data-aos="fade-up">Contact Us</h2>
+      <h2 data-aos="fade-up">Get in Touch</h2>
       <p>Email: hello@daxdialer.com | Phone: +91 98765 43210</p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 DaxDialer — All Rights Reserved</p>
+    <div class="container">
+      <p>© 2025 DaxDialer — All rights reserved.</p>
+    </div>
   </footer>
 
   <!-- Scripts -->

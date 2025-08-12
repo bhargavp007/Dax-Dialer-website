@@ -1,249 +1,137 @@
-/* RESET & BASE */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
+/* --------------------
+   Base & layout
+   -------------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --primary:#0a2540;
+  --accent:#00bcd4;
+  --accent-dark:#0198aa;
+  --muted:#f4f6f8;
+  --card:#fff;
+  --text:#222;
+}
+body{
   font-family: 'Inter', sans-serif;
-  color: #333;
-  background: #f9f9f9;
+  color:var(--text);
+  background:#fafafa;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.container{ width:92%; max-width:1200px; margin:0 auto; }
+
+/* --------------------
+   Header / navbar
+   -------------------- */
+.site-header{ background:var(--primary); color:#fff; position:sticky; top:0; z-index:40; }
+.nav-wrap{ display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.9rem 0; }
+.logo{ font-family:'Raleway',sans-serif; font-weight:700; font-size:1.4rem; color:#fff; }
+.nav{ }
+.nav ul{ list-style:none; display:flex; gap:1.25rem; align-items:center; }
+.nav a{ color:#fff; text-decoration:none; font-weight:600; transition:color .25s; }
+.nav a:hover{ color:var(--accent); }
+.nav-actions{ display:flex; align-items:center; gap:0.75rem; }
+
+/* hamburger - mobile */
+.hamburger{ display:none; width:40px;height:34px;background:transparent;border:0;cursor:pointer; position:relative; }
+.hamburger span{ display:block;height:3px;background:#fff;border-radius:2px;margin:6px 0; transition:all .25s; }
+
+/* Button styles */
+.btn{ display:inline-block; background:var(--accent); color:#fff; padding:.6rem 1rem; border-radius:6px; text-decoration:none; font-weight:700; transition:transform .18s, background .18s; }
+.btn:hover{ background:var(--accent-dark); transform:translateY(-3px); }
+
+/* --------------------
+   Hero
+   -------------------- */
+.hero{
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+  color:#fff; text-align:center; padding:6rem 1rem;
+}
+.hero-inner h1{ font-family:'Raleway',sans-serif; font-size:clamp(1.6rem,2.6vw,2.6rem); margin-bottom:.6rem; }
+.hero-inner p{ font-size:clamp(.95rem,1.2vw,1.1rem); margin-bottom:1rem; }
+
+/* --------------------
+   Trust grid
+   -------------------- */
+.trust{ background:#fff; padding:3.2rem 0; text-align:center; }
+.trust h2{ font-family:'Raleway',sans-serif; font-size:clamp(1.4rem,2.2vw,2rem); margin-bottom:1.8rem; color:var(--primary); }
+.trust-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:1.25rem; padding:0 0.5rem; }
+.trust-card{ background:var(--muted); padding:1.4rem; border-radius:10px; box-shadow:0 6px 18px rgba(12,20,30,0.05); transition:transform .25s, box-shadow .25s; text-align:left; }
+.trust-card:hover{ transform:translateY(-6px); box-shadow:0 12px 30px rgba(12,20,30,0.08); }
+.trust-icon{ font-size:1.9rem; margin-bottom:.6rem; display:inline-block; }
+.trust-card h3{ font-family:'Raleway',sans-serif; margin-bottom:.45rem; color:var(--primary); font-size:1.05rem; }
+.trust-card p{ color:#444; font-size:.95rem; line-height:1.5; }
+
+/* --------------------
+   Split feature / Call CRM & Monitoring
+   -------------------- */
+.split-feature{ display:flex; gap:1.5rem; align-items:center; padding:3rem 0; }
+.split-feature .feature-image, .split-feature .feature-text{ flex:1; }
+.feature-image img{ width:100%; height:auto; border-radius:10px; display:block; }
+.feature-text h2{ font-family:'Raleway',sans-serif; font-size:clamp(1.25rem,2.2vw,1.8rem); color:var(--primary); margin-bottom:.6rem; }
+.feature-text p{ color:#444; line-height:1.6; margin-bottom:1rem; }
+
+/* points */
+.points{ margin-top:1rem; display:flex; flex-direction:column; gap:.6rem; }
+.point{ display:flex; gap:.6rem; align-items:center; background:#fff; padding:.7rem .9rem; border-radius:8px; box-shadow:0 6px 18px rgba(12,20,30,0.03); font-weight:600; color:var(--primary); }
+
+/* service menu / whatsapp block */
+.services{ background:#fff; padding:2.5rem 0; }
+.service-container{ display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap; }
+.service-menu{ flex:1 1 220px; min-width:200px; }
+.service-menu ul{ list-style:none; display:flex; flex-direction:column; gap:.6rem; }
+.service-menu li{ background:var(--muted); padding:.9rem; border-radius:10px; cursor:pointer; transition:all .18s; }
+.service-menu li.active{ background:var(--accent); color:#fff; box-shadow:0 8px 20px rgba(0,139,142,0.08); }
+.service-content{ flex:3 1 420px; min-width:260px; }
+.service-content img{ width:100%; height:auto; border-radius:10px; margin-top:1rem; }
+
+/* feature cards (marketing) */
+.features .feature-cards{ display:flex; flex-direction:column; gap:1rem; margin-top:1rem; }
+.feature-card{ background:#fff; padding:1rem; border-radius:10px; box-shadow:0 6px 18px rgba(12,20,30,0.04); }
+
+/* pricing/testimonial/contact/footer */
+.pricing, .testimonials, .contact{ padding:3rem 0; text-align:center; }
+.price-card{ display:inline-block; background:#fff; padding:1.25rem; border-radius:10px; box-shadow:0 6px 18px rgba(12,20,30,0.04); }
+
+/* footer */
+footer{ background:var(--primary); color:#fff; padding:1rem 0; text-align:center; }
+
+/* --------------------
+   Responsive rules
+   -------------------- */
+
+/* Large tablets */
+@media (max-width: 1024px){
+  .split-feature{ gap:1rem; padding:2.5rem 0; }
+  .nav ul{ gap:1rem; }
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Mobile / small tablets */
+@media (max-width: 768px){
+  .nav ul{ display:none; }           /* hide the desktop nav */
+  .hamburger{ display:inline-block; }/* show hamburger */
+  .nav-actions{ gap:.5rem; }
+
+  .split-feature{ flex-direction:column-reverse; text-align:left; padding:2rem 0; }
+  .split-feature.reverse{ flex-direction:column; }
+  .trust-grid{ grid-template-columns:repeat(1,1fr); }
+
+  .service-container{ flex-direction:column; }
+  .features .feature-cards{ flex-direction:column; }
+  .hero{ padding:4.5rem 1rem; }
 }
 
-header {
-  background: #1f1f1f;
-  color: #fff;
+/* Small phones */
+@media (max-width:480px){
+  .logo{ font-size:1.1rem; }
+  .hero-inner h1{ font-size:1.6rem; }
+  .trust h2{ font-size:1.4rem; }
+  .btn{ padding:.5rem .8rem; font-size:.95rem; }
+  .point{ font-size:0.95rem; padding:.6rem; }
+  .trust-card{ padding:1rem; }
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-}
-
-.logo {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 1.8rem;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #00bcd4;
-}
-
-.btn {
-  background: #00bcd4;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 5px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-  background: #0198aa;
-  transform: translateY(-3px);
-}
-
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url('https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80')
-              center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 6rem 2rem;
-}
-
-.hero-text h1 {
-  font-family: 'Raleway', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-}
-
-.services {
-  background: #fff;
-  padding: 4rem 0;
-}
-
-.service-container {
-  display: flex;
-  gap: 3rem;
-}
-
-.service-menu {
-  flex: 1;
-}
-
-.service-menu ul {
-  list-style: none;
-}
-
-.service-menu li {
-  padding: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.service-menu li:hover,
-.service-menu li.active {
-  background: #00bcd4;
-  color: #fff;
-}
-
-.service-menu li span {
-  margin-right: 0.5rem;
-}
-
-.service-content {
-  flex: 3;
-}
-
-.service-content h2 {
-  font-family: 'Raleway', sans-serif;
-  margin-bottom: 1rem;
-}
-
-.service-content img {
-  width: 100%;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
-.split-feature {
-  /* Reuse split-feature layout */
-.split-feature.reverse {
-  flex-direction: row-reverse;
-}
-
-.points {
-  margin-top: 1rem;
-}
-
-.point {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #fff;
-  padding: 0.8rem 1rem;
-  margin-bottom: 0.8rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  font-weight: 500;
-}
-
-.feature-text h2 {
-  margin-bottom: 1rem;
-}
-
-.feature-text p {
-  margin-bottom: 1rem;
-}
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  align-items: center;
-  padding: 4rem 0;
-}
-
-.feature-image {
-  flex: 1;
-}
-
-.feature-image img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.feature-text {
-  flex: 1;
-}
-
-.feature-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.feature-card {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.contact {
-  padding: 3rem 0;
-  text-align: center;
-}
-
-footer {
-  background: #1f1f1f;
-  color: #fff;
-  text-align: center;
-  padding: 1rem 0;
-}
-
-/* Trust Section */
-.trust {
-  background: #fff;
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.trust h2 {
-  font-family: 'Raleway', sans-serif;
-  margin-bottom: 3rem;
-}
-
-.trust-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 2rem;
-}
-
-.trust-card {
-  background: #f9f9f9;
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.trust-card:hover {
-  transform: translateY(-5px);
-}
-
-.trust-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.trust-card h3 {
-  font-family: 'Raleway', sans-serif;
-  margin-bottom: 0.5rem;
-}
+/* NAV mobile open state - toggled via JS by adding .open on header */
+.site-header.mobile-open .nav{ display:block; position:absolute; left:0; right:0; top:64px; background:var(--primary); padding:1rem 0; }
+.site-header.mobile-open .nav ul{ display:flex; flex-direction:column; gap:0.6rem; padding:0.6rem 1rem; }
+.site-header.mobile-open .nav a{ color:#fff; font-weight:600; }
