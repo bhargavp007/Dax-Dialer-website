@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaxDialer - Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero Section */
+        .solutions-hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/solutions-bg.jpg') center/cover no-repeat;
+            color: white;
+            padding: 100px 5%;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .solutions-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .solutions-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* Solutions Section */
+        .solutions-section {
+            padding: 80px 5%;
+            background: #f9f9f9;
+        }
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .solution-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.6s ease forwards;
+        }
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+        }
+        .solution-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        .solution-card h3 {
+            color: #0a3d62;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .solution-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Keyframes */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        @keyframes slideUp {
+            from {opacity: 0; transform: translateY(30px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .solutions-hero h1 { font-size: 2.2rem; }
+            .solutions-hero p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+   <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="logo">DaxDialer</div>
+
+      <nav class="nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="solution.html">Solutions</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="#" class="try-free-btn">Try Free</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- Hero Section -->
+    <section class="solutions-hero">
+        <h1>Our Solutions</h1>
+        <p>Discover how DaxDialer empowers your business with advanced communication tools, intelligent call routing, and real-time analytics to enhance productivity and customer satisfaction.</p>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <div class="solutions-grid">
+
+            <div class="solution-card">
+                <svg class="solution-icon" fill="#27ae60" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1 1 0 0 0-1.1.24l-2.2 2.2a15.07 15.07 0 0 1-6.6-6.6l2.2-2.2a1 1 0 0 0 .24-1.1A11.36 11.36 0 0 0 8.5 4c0-.55-.45-1-1-1H4a1 1 0 0 0-1 1C3 13.39 10.61 21 20 21a1 1 0 0 0 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+                <h3>Auto Dialer</h3>
+                <p>Boost productivity with automated dialing and smart call distribution for your agents.</p>
+            </div>
+
+            <div class="solution-card">
+                <svg class="solution-icon" fill="#27ae60" viewBox="0 0 24 24"><path d="M3 3h18v2H3V3zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></svg>
+                <h3>Analytics Dashboard</h3>
+                <p>Track performance, monitor calls, and optimize campaigns with detailed analytics.</p>
+            </div>
+
+            <div class="solution-card">
+                <svg class="solution-icon" fill="#27ae60" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0 0 20h8a2 2 0 0 0 2-2V12a10 10 0 0 0-10-10z"/></svg>
+                <h3>Global Calling</h3>
+                <p>Connect with customers worldwide with our cost-effective VoIP calling solutions.</p>
+            </div>
+
+            <div class="solution-card">
+                <svg class="solution-icon" fill="#27ae60" viewBox="0 0 24 24"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-14a9 9 0 0 0 0 18c2.39 0 4.58-.94 6.18-2.46l1.42 1.42A10.97 10.97 0 0 1 12 22a11 11 0 1 1 0-22c2.93 0 5.6 1.17 7.54 3.07l-1.42 1.42A8.97 8.97 0 0 0 12 3z"/></svg>
+                <h3>Secure Communication</h3>
+                <p>Ensure your business data is safe with enterprise-grade encryption and compliance.</p>
+            </div>
+
+            <div class="solution-card">
+                <svg class="solution-icon" fill="#27ae60" viewBox="0 0 24 24"><path d="M21 6h-2V4a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2H3a1 1 0 0 0-1 1v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V7a1 1 0 0 0-1-1zm-6 0H9V4h6v2z"/></svg>
+                <h3>Omnichannel Support</h3>
+                <p>Integrate voice, SMS, WhatsApp, and email into one seamless communication hub.</p>
+            </div>
+
+        </div>
+    </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 DaxDialer — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Try Free Modal -->
+  <div id="tryFreeModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Start Your Free Trial</h2>
+      <p>Fill in your details and we’ll set up your DaxDialer account.</p>
+      <form id="tryFreeForm">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="company" placeholder="Company Name" required>
+        <textarea name="message" placeholder="Additional Details (Optional)"></textarea>
+        <button type="submit">Start Free Trial</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Load JS only once -->
+  <script src="script.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
+

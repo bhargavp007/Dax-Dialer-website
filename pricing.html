@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaxDialer - Pricing</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Pricing Section Styles */
+        .pricing-section {
+            padding: 80px 5%;
+            background: #f9f9f9;
+            text-align: center;
+        }
+        .pricing-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #0a3d62;
+        }
+        .pricing-section p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 50px;
+        }
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .pricing-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+        }
+        .pricing-card.recommended {
+            border: 2px solid #27ae60;
+        }
+        .recommended-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #27ae60;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: bold;
+            padding: 5px 0;
+        }
+        .pricing-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #0a3d62;
+        }
+        .pricing-price {
+            font-size: 2.5rem;
+            color: #27ae60;
+            margin: 15px 0;
+        }
+        .pricing-sub {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        .pricing-list {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .pricing-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .pricing-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #27ae60;
+            color: white;
+            font-size: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #1e874b;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="logo">DaxDialer</div>
+
+      <nav class="nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="solution.html">Solutions</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="#" class="try-free-btn">Try Free</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <h2>Our Pricing Plans</h2>
+        <p>Choose the plan that fits your business needs and scale your calling operations with DaxDialer.</p>
+
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <div class="pricing-title">Starter</div>
+                <div class="pricing-price">199/-</div>
+                <div class="pricing-sub">Per user/month - billed annually</div>
+                <ul class="pricing-list">
+                    <li>Unlimited outbound calls</li>
+                    <li>Call recording</li>
+                    <li>Basic analytics</li>
+                    <li>Email support</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+
+            <div class="pricing-card recommended">
+                <div class="recommended-label">Recommended</div>
+                <div class="pricing-title">Professional</div>
+                <div class="pricing-price">699/-</div>
+                <div class="pricing-sub">Per user/month - billed annually</div>
+                <ul class="pricing-list">
+                    <li>Everything in Starter</li>
+                    <li>Call routing & IVR</li>
+                    <li>Advanced analytics</li>
+                    <li>CRM integration</li>
+                </ul>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-title">Enterprise</div>
+                <div class="pricing-price">Custom</div>
+                <div class="pricing-sub">Tailored pricing for large teams</div>
+                <ul class="pricing-list">
+                    <li>All Professional features</li>
+                    <li>24/7 dedicated support</li>
+                    <li>Custom integrations</li>
+                    <li>Unlimited agents</li>
+                </ul>
+                <a href="#" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 DaxDialer — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Try Free Modal -->
+  <div id="tryFreeModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Start Your Free Trial</h2>
+      <p>Fill in your details and we’ll set up your DaxDialer account.</p>
+      <form id="tryFreeForm">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="company" placeholder="Company Name" required>
+        <textarea name="message" placeholder="Additional Details (Optional)"></textarea>
+        <button type="submit">Start Free Trial</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Load JS only once -->
+  <script src="script.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
