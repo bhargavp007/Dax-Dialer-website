@@ -96,38 +96,37 @@ body{
 /* footer */
 footer{ background:var(--primary); color:#fff; padding:1rem 0; text-align:center; }
 
-/* =======================
-   Contact Section Styles
-======================= */
+/* Contact Section */
 .contact-section {
     padding: 60px 0;
-    background-color: #fff;
+    background: #fff;
     text-align: center;
 }
 
 .section-title {
-    font-size: 2rem;
-    color: #222;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1f2d3d;
     margin-bottom: 10px;
-    position: relative;
 }
 
 .section-title::after {
-    content: '';
+    content: "";
+    display: block;
     width: 60px;
     height: 3px;
-    background: #0c8a3f; /* Your green accent */
-    display: block;
-    margin: 8px auto;
-    border-radius: 2px;
+    background: #5f3afc; /* purple underline */
+    margin: 8px auto 0;
+    border-radius: 3px;
 }
 
 .section-subtitle {
+    font-size: 1rem;
     color: #555;
-    max-width: 600px;
-    margin: 0 auto 40px;
+    margin-bottom: 50px;
 }
 
+/* Wrapper for cards & image */
 .contact-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -136,48 +135,66 @@ footer{ background:var(--primary); color:#fff; padding:1rem 0; text-align:center
     gap: 30px;
 }
 
+/* Contact cards container */
 .contact-info {
     flex: 1;
     display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
     gap: 20px;
 }
 
+/* Single contact card */
 .contact-card {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.05);
+    background: #f8f8f8;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .contact-card i {
-    font-size: 2rem;
-    color: #0c8a3f;
+    font-size: 1.8rem;
+    color: #5f3afc; /* purple-blue icons */
     margin-bottom: 10px;
 }
 
-.contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+.contact-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2d3d;
+    margin-bottom: 6px;
+}
+
+.contact-card p {
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Illustration on right */
+.contact-image {
+    flex: 1;
+    max-width: 380px;
 }
 
 .contact-image img {
-    max-width: 350px;
     width: 100%;
-    animation: fadeInUp 1s ease forwards;
+    height: auto;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .contact-wrapper {
         flex-direction: column;
     }
     .contact-info {
-        order: 2;
+        grid-template-columns: 1fr 1fr;
     }
-    .contact-image {
-        order: 1;
+}
+
+@media (max-width: 576px) {
+    .contact-info {
+        grid-template-columns: 1fr;
     }
 }
 
