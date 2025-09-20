@@ -44,30 +44,58 @@ window.addEventListener('scroll', () => {
   });
 });
 
-/* Try Free Modal */
+/* Try Free Modal + Formspree submission */
 document.addEventListener("DOMContentLoaded", function () {
   const tryFreeBtns = document.querySelectorAll('.try-free-btn');
   const modal = document.getElementById('tryFreeModal');
   const closeModal = document.getElementById('closeModal');
+  const form = document.getElementById('tryFreeForm');
 
-  if (tryFreeBtns.length > 0 && modal && closeModal) {
-    // Open modal
-    tryFreeBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        modal.style.display = 'block';
-      });
+  // Open modal
+  tryFreeBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.style.display = 'block';
     });
+  });
 
-    // Close modal
-    closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
+  // Close modal
+  if (closeModal) {
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+  }
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
 
-    // Close modal on outside click
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
+  // Handle form submission with AJAX
+  if (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const origText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+
+        if (response.ok) {
+          alert('✅ Your request has been sent!');
+          form.reset();
+          modal.style.display = 'none';
+        } else {
+          alert('⚠️ Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        alert('⚠️ Network error. Please check your connection.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = origText;
       }
     });
   }
