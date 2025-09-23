@@ -72,3 +72,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('tryFreeForm');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const endpoint = 'https://formsubmit.co/ajax/patelbhargav8262@gmail.com';
+    const fd = new FormData(form);
+
+    fetch(endpoint, { method: 'POST', body: fd })
+      .then(r => r.json())
+      .then(data => {
+        // success handling
+        alert('Thanks — submission sent!');
+        form.reset();
+        // close modal if needed:
+        const closeBtn = document.getElementById('closeModal');
+        if (closeBtn) closeBtn.click();
+      })
+      .catch(err => {
+        console.error('FormSubmit error:', err);
+        alert('Sorry — submission failed. Try again.');
+      });
+  });
+});
