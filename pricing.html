@@ -188,23 +188,37 @@
     </div>
   </footer>
 
-  <!-- Try Free Modal -->
-  <div id="tryFreeModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn" id="closeModal">&times;</span>
-      <h2>Ask Demo For Free Trial</h2>
-      <p>Fill in your details and we’ll set up your DaxDialer account.</p>
-      <form id="tryFreeForm" action="https://formsubmit.co/patelbhargav8262@gmail.com" method="POST"></form>
+ <!-- Try Free Modal -->
+<div id="tryFreeModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h2>Ask Demo For Free Trial</h2>
+    <p>Fill in your details and we’ll set up your DaxDialer account.</p>
 
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <input type="text" name="company" placeholder="Company Name" required>
-        <textarea name="message" placeholder="Additional Details (Optional)"></textarea>
-        <button type="submit">Start Free Trial</button>
-      </form>
-    </div>
+    <!-- ✅ Normal FormSubmit POST (works locally) -->
+    <form
+      id="tryFreeForm"
+      action="https://formsubmit.co/patelbhargav8262@gmail.com"
+      method="POST">
+
+      <!-- Hidden FormSubmit settings -->
+      <input type="hidden" name="_subject" value="DaxDialer — New Trial Request">
+      <input type="hidden" name="_captcha" value="false">
+      <!-- Redirect after successful submission -->
+      <input type="hidden" name="_next" value="http://localhost:3000/thank-you.html">
+
+      <!-- User fields -->
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <input type="text" name="company" placeholder="Company Name" required>
+      <textarea name="message" placeholder="Additional Details (Optional)"></textarea>
+
+      <button type="submit">Start Free Trial</button>
+    </form>
   </div>
+</div>
+
 
   <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">

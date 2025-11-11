@@ -1,10 +1,14 @@
+// ----------------------------
 // Initialize AOS animations
+// ----------------------------
 AOS.init({
   duration: 700,
   once: true
 });
 
-/* Mobile nav toggle */
+// ----------------------------
+// Mobile nav toggle
+// ----------------------------
 const header = document.querySelector('.site-header');
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('mainNav');
@@ -26,7 +30,9 @@ if (hamburger && nav) {
   });
 }
 
-/* Accessibility: close menu on Escape key */
+// ----------------------------
+// Accessibility: close menu on Escape key
+// ----------------------------
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && header.classList.contains('mobile-open')) {
     header.classList.remove('mobile-open');
@@ -35,7 +41,9 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-/* Scroll animations for elements with .animate-up */
+// ----------------------------
+// Scroll animations for elements with .animate-up
+// ----------------------------
 window.addEventListener('scroll', () => {
   document.querySelectorAll('.animate-up').forEach(el => {
     if (el.getBoundingClientRect().top < window.innerHeight - 50) {
@@ -44,7 +52,9 @@ window.addEventListener('scroll', () => {
   });
 });
 
-/* Try Free Modal */
+// ----------------------------
+// Try Free Modal open / close
+// ----------------------------
 document.addEventListener("DOMContentLoaded", function () {
   const tryFreeBtns = document.querySelectorAll('.try-free-btn');
   const modal = document.getElementById('tryFreeModal');
@@ -56,48 +66,70 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         modal.style.display = 'block';
+        modal.classList.add('fade-in');
       });
     });
 
     // Close modal
     closeModal.addEventListener('click', () => {
+      modal.classList.remove('fade-in');
       modal.style.display = 'none';
     });
 
     // Close modal on outside click
     window.addEventListener('click', (e) => {
       if (e.target === modal) {
+        modal.classList.remove('fade-in');
         modal.style.display = 'none';
       }
     });
   }
 });
 
-
-
-
+// ----------------------------
+// Try Free Form (AJAX FormSubmit version)
+// ----------------------------
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('tryFreeForm');
-  if (!form) return;
+  const popup = document.getElementById('successPopup');
+  const modal = document.getElementById('tryFreeModal');
 
-  form.addEventListener('submit', function (e) {
+  if (!form || !popup) return;
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const endpoint = 'https://formsubmit.co/ajax/patelbhargav8262@gmail.com';
+
+    // Gather form data
     const fd = new FormData(form);
 
-    fetch(endpoint, { method: 'POST', body: fd })
-      .then(r => r.json())
-      .then(data => {
-        // success handling
-        alert('Thanks — submission sent!');
-        form.reset();
-        // close modal if needed:
-        const closeBtn = document.getElementById('closeModal');
-        if (closeBtn) closeBtn.click();
-      })
-      .catch(err => {
-        console.error('FormSubmit error:', err);
-        alert('Sorry — submission failed. Try again.');
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/patelbhargav8262@gmail.com', {
+        method: 'POST',
+        body: fd
       });
+
+      if (!res.ok) throw new Error('Network response not OK');
+      const data = await res.json();
+
+      // Show success popup
+      popup.style.display = 'block';
+      setTimeout(() => popup.style.opacity = '1', 10);
+
+      // Clear form fields
+      form.reset();
+
+      // Hide popup and modal after delay
+      setTimeout(() => {
+        popup.style.opacity = '0';
+        setTimeout(() => {
+          popup.style.display = 'none';
+          modal.style.display = 'none';
+        }, 300);
+      }, 3000);
+
+    } catch (err) {
+      console.error('FormSubmit error:', err);
+      alert('⚠️ Unable to send form right now. Please try again.');
+    }
   });
 });
